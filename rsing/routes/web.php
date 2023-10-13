@@ -22,22 +22,22 @@ Route::get('/', function () {
     return view('welcome');
 })->name('accueil');
 
-//route qui retourne la vue service.blade.php
+//route qui retourne la vue service.blade.php dans layouts/app.blade.php
 Route::get('/services', function () {
     return view('services.service');
 })->name('service');
 
-//route qui retourne la vue transaction.blade.php
+//route qui retourne la vue transaction.blade.php dans layouts/app.blade.php
 Route::get('/opérateur', function () {
     return view('opérateurs.transaction');
 })->name('opérateur');
 
-//route qui retourne la vue reçue.blade.php
+//route qui retourne la vue reçue.blade.php dans layouts/app.blade.php
 Route::get('/ventes', function () {
     return view('ventes.reçue');
-})->name('ventes.reçue');
+})->name('reçue');
 
-//route qui retourne la vue produit.blade.php
+//route qui retourne la vue produit.blade.php dans layouts/app.blade.php
 Route::get('/produits', function () {
     return view('produits.produit');
 })->name('produit');

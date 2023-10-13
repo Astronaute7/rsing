@@ -42,15 +42,16 @@
 
     <!-- Barre latérale -->
     <div class="sidebar">
-        <a href="{{ route('ventes.reçue') }}">Vendre un produit</a>
-        <a href="{{ route('produits.index') }}">Liste des produits</a>
-        <a href="{{ route('produits.create') }}">Ajouter un produit</a>
+        <a href="{{ route('reçue') }}">Vendre un produit</a>
+        <a href="{{ route('produits.index') }}"">Liste des produits</a>
+        <a href="{{ route('produits.create') }}"">Ajouter un produit</a>
     </div>
 
     <!-- Contenu principal -->
     <div class="content">
         <!-- Le contenu de votre site va ici -->
-
+        <h1>page des produits</h1>
+        <p>Tout ce qui concerne les produits.</p>
     </div>
 
 @endsection
