@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
 
@@ -45,6 +45,7 @@
         <a href="{{ route('reçue') }}">Vendre un produit</a>
         <a href="{{ route('produits.index') }}"">Liste des produits</a>
         <a href="{{ route('produits.create') }}"">Ajouter un produit</a>
+        <a href="{{ route('produits.inventaire') }}"">Faire l'inventaire</a>
     </div>
 
     <!-- Contenu principal -->

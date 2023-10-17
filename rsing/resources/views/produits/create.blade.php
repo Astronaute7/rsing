@@ -1,9 +1,9 @@
-nom' => 'required|string|max:20',
-            'prixUnitaire' => 'required|integer',
-            'quantitéEnStock'
-            @extends('layouts.app')
+
+            @extends('layouts.entete')
 
             @section('content')
+            <br>
+<br>
             <style>
                 /* Styles pour diviser la page en trois colonnes */
                 .container {

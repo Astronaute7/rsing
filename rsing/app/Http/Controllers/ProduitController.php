@@ -16,6 +16,13 @@ class ProduitController extends Controller
         return View('produits.index', compact('produits'));
     }
 
+    public function inventaire()
+    {
+        //
+        $produits=Produit::All();
+        return View('produits.inventaire', compact('produits'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

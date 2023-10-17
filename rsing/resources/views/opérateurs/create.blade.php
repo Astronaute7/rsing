@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
+<br>
+<br>
 <style>
     /* Styles pour diviser la page en trois colonnes */
     .container {

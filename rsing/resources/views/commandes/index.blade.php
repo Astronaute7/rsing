@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
+<br>
+<br>
     <h2>Liste des Commandes</h2>
 
     <table class="table table-striped">
@@ -34,11 +36,7 @@
                 </td>
                 <td>
                     <a href="{{ route('commandes.edit', $commande->id) }}" class="btn btn-warning">Modifier</a>
-                    <form method="POST" action="{{ route('commandes.destroy', $commande->id) }}" style="display: inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                    </form>
+                    
                 </td>
             </tr>
             @endforeach

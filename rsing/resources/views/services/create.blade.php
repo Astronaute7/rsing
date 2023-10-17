@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
+<br>
+<br>
     <h2>Créer un Nouveau Service</h2>
 
     <form method="POST" action="{{ route('services.store') }}">

@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
+<br>
+<br>
     <h2>Modifier la Commande</h2>
 
     <form method='POST' action="{{ route('commandes.update', $commande->id) }}">
@@ -27,6 +29,7 @@
             <select name="statut" id="statut" class="form-control" required>
                 <option value="en cours" @if($commande->statut == 'en cours') selected @endif>En Cours</option>
                 <option value="terminée" @if($commande->statut == 'terminée') selected @endif>Terminée</option>
+                <option value="annulée" @if($commande->statut == 'annulée') selected @endif>Terminée</option>
             </select>
         </div>
 

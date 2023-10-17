@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
+<br>
+<br>
     <h2>Liste des Services</h2>
 
     <table class="table table-striped">

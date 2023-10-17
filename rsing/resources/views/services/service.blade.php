@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
 
@@ -47,6 +47,7 @@
 
         
         <a href="{{route('services.index')}}">Liste des services</a>
+        <a href="{{route('services.create')}}">Ajouter un nouveau service</a>
     </div>
 
     <!-- Contenu principal -->

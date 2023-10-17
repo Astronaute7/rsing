@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
     <h2>Détails de la Commande</h2>

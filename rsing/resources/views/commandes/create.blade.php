@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
+<br>
+<br>
     <h2>Créer une Nouvelle Commande</h2>
 
     <form method="POST" action="{{ route('commandes.store') }}">
@@ -11,6 +13,7 @@
             <select name="statut" id="statut" class="form-control" required>
                 <option value="en cours">En Cours</option>
                 <option value="terminée">Terminée</option>
+                <option value="annulée">Annulée</option>
             </select>
         </div>
 

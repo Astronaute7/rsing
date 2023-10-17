@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
+<br>
+<br>
     <h2>Modifier le Service</h2>
 
     <form method="POST" action="{{ route('services.update', $service->id) }}">

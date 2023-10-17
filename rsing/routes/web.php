@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\OpérateurController;
 use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\EmployéController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,11 +18,22 @@ use App\Http\Controllers\ProduitController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-//page d'accueil
+//page de connexion
 Route::get('/', function () {
     return view('welcome');
+});
+
+ //page d'accueil de vente de tickets
+Route::get('/Accueil', function () {
+    return view('ventes.accueil');
 })->name('accueil');
+/*
+//inventaire
+Route::get('/Inventaire', function () {
+    return view('produits.inventaire');
+})->name('produits.inventaire');
+
+*/
 
 //route qui retourne la vue service.blade.php dans layouts/app.blade.php
 Route::get('/services', function () {
@@ -94,8 +107,18 @@ Route::controller(ProduitController::class)->group(function () {
     Route::delete('/Supprimerproduits/{opérateur}', 'destroy')->name('produits.destroy');
     Route::put('/Modifierproduits/{opérateur}', 'update')->name('produits.update');
     Route::get('/Voirproduit', 'show')->name('produits.show');
+
+    //Route::get('/listeproduits', 'index')->name('produits.index');
+    Route::get('/Inventaire', 'inventaire')->name('produits.inventaire');
+    
 });
 
+//routes de EmployéController
+Route::controller(EmployéController::class)->group(function () {
+    Route::get('/listeemployé', 'index')->name('employés.index');
+    Route::post('/Enregistreremployé', 'store')->name('employés.store');
+    Route::delete('/Supprimeremployé/{employé}', 'destroy')->name('employés.destroy');
+});
 
 
 
@@ -117,8 +140,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-
-
 
 require __DIR__.'/auth.php';

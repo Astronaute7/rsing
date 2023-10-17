@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class EmployéController extends Controller
 {
@@ -12,6 +13,8 @@ class EmployéController extends Controller
     public function index()
     {
         //
+        $employés = User::all();
+        return view('employés.index', compact('employés'));
     }
 
     /**
@@ -20,6 +23,7 @@ class EmployéController extends Controller
     public function create()
     {
         //
+        return view('employés.create');
     }
 
     /**
@@ -28,6 +32,12 @@ class EmployéController extends Controller
     public function store(Request $request)
     {
         //
+        $employé = new User;
+        $employé->nom = $request->input('name');
+        $employé->prix = $request->input('email');
+        $employé->save();
+
+        return redirect()->route('employés.index');
     }
 
     /**
@@ -57,8 +67,12 @@ class EmployéController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $employé)
     {
         //
+
+        $employé->delete();
+
+        return redirect()->route('employés.index');
     }
 }

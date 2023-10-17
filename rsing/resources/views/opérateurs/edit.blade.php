@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.entete')
 
 @section('content')
+<br>
+<br>
 <style>
     /* Styles pour diviser la page en trois colonnes */
     .container {
@@ -20,8 +22,9 @@
 </style>
 
 <div>
-    <form method="PUT" action="{{ route('opérateurs.update', $opérateur->id) }}">
+    <form method="POST" action="{{ route('opérateurs.update', $opérateur->id) }}">
         @csrf
+        @method('PUT')
         <fieldset>
             <legend>Enrégistrement des Transactions</legend>
 
